@@ -15,6 +15,8 @@ from __future__ import print_function
 
 import tensorflow as tf
 from tensorflow.contrib import rnn
+import time
+start = time.time()
 
 # Import MNIST data
 from tensorflow.examples.tutorials.mnist import input_data
@@ -113,3 +115,6 @@ with tf.Session() as sess:
     test_label = mnist.test.labels[:test_len]
     print("Testing Accuracy:", \
         sess.run(accuracy, feed_dict={X: test_data, Y: test_label}))
+
+end = time.time()
+print(end - start)

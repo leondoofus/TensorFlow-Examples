@@ -16,6 +16,8 @@ from __future__ import print_function
 
 import tensorflow as tf
 import random
+import time
+start = time.time()
 
 
 # ====================
@@ -191,3 +193,6 @@ with tf.Session() as sess:
     print("Testing Accuracy:", \
         sess.run(accuracy, feed_dict={x: test_data, y: test_label,
                                       seqlen: test_seqlen}))
+
+end = time.time()
+print(end - start)

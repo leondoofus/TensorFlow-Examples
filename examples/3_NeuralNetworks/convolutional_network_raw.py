@@ -11,6 +11,8 @@ Project: https://github.com/aymericdamien/TensorFlow-Examples/
 from __future__ import division, print_function, absolute_import
 
 import tensorflow as tf
+import time
+start = time.time()
 
 # Import MNIST data
 from tensorflow.examples.tutorials.mnist import input_data
@@ -139,3 +141,5 @@ with tf.Session() as sess:
         sess.run(accuracy, feed_dict={X: mnist.test.images[:256],
                                       Y: mnist.test.labels[:256],
                                       keep_prob: 1.0}))
+end = time.time()
+print(end - start)

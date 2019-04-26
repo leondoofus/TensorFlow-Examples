@@ -21,6 +21,8 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("/tmp/data/", one_hot=False)
 
 import tensorflow as tf
+import time
+start = time.time()
 
 # Parameters
 learning_rate = 0.1
@@ -101,3 +103,6 @@ input_fn = tf.estimator.inputs.numpy_input_fn(
 e = model.evaluate(input_fn)
 
 print("Testing Accuracy:", e['accuracy'])
+
+end = time.time()
+print(end - start)

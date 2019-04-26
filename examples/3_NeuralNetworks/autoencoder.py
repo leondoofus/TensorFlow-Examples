@@ -19,6 +19,8 @@ from __future__ import division, print_function, absolute_import
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
+import time
+start = time.time()
 
 # Import MNIST data
 from tensorflow.examples.tutorials.mnist import input_data
@@ -131,12 +133,14 @@ with tf.Session() as sess:
             canvas_recon[i * 28:(i + 1) * 28, j * 28:(j + 1) * 28] = \
                 g[j].reshape([28, 28])
 
-    print("Original Images")
-    plt.figure(figsize=(n, n))
-    plt.imshow(canvas_orig, origin="upper", cmap="gray")
-    plt.show()
+    end = time.time()
+    print(end - start)
+    # print("Original Images")
+    # plt.figure(figsize=(n, n))
+    # plt.imshow(canvas_orig, origin="upper", cmap="gray")
+    # plt.show()
 
-    print("Reconstructed Images")
-    plt.figure(figsize=(n, n))
-    plt.imshow(canvas_recon, origin="upper", cmap="gray")
-    plt.show()
+    # print("Reconstructed Images")
+    # plt.figure(figsize=(n, n))
+    # plt.imshow(canvas_recon, origin="upper", cmap="gray")
+    # plt.show()

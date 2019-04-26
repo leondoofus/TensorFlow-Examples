@@ -16,6 +16,8 @@ Project: https://github.com/aymericdamien/TensorFlow-Examples/
 from __future__ import print_function
 
 import tensorflow as tf
+import time
+start = time.time()
 
 # Set Eager API
 tf.enable_eager_execution()
@@ -131,3 +133,6 @@ testY = mnist.test.labels
 
 test_acc = accuracy_fn(neural_net, testX, testY)
 print("Testset Accuracy: {:.4f}".format(test_acc))
+
+end = time.time()
+print(end - start)

@@ -24,6 +24,8 @@ from __future__ import division, print_function, absolute_import
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
+import time
+start = time.time()
 
 # Import MNIST data
 from tensorflow.examples.tutorials.mnist import input_data
@@ -138,20 +140,23 @@ with tf.Session() as sess:
             print('Step %i: Generator Loss: %f, Discriminator Loss: %f' % (i, gl, dl))
 
     # Generate images from noise, using the generator network.
-    f, a = plt.subplots(4, 10, figsize=(10, 4))
-    for i in range(10):
-        # Noise input.
-        z = np.random.uniform(-1., 1., size=[4, noise_dim])
-        g = sess.run([gen_sample], feed_dict={gen_input: z})
-        g = np.reshape(g, newshape=(4, 28, 28, 1))
-        # Reverse colours for better display
-        g = -1 * (g - 1)
-        for j in range(4):
-            # Generate image from noise. Extend to 3 channels for matplot figure.
-            img = np.reshape(np.repeat(g[j][:, :, np.newaxis], 3, axis=2),
-                             newshape=(28, 28, 3))
-            a[j][i].imshow(img)
+    # f, a = plt.subplots(4, 10, figsize=(10, 4))
+    # for i in range(10):
+    #     # Noise input.
+    #     z = np.random.uniform(-1., 1., size=[4, noise_dim])
+    #     g = sess.run([gen_sample], feed_dict={gen_input: z})
+    #     g = np.reshape(g, newshape=(4, 28, 28, 1))
+    #     # Reverse colours for better display
+    #     g = -1 * (g - 1)
+    #     for j in range(4):
+    #         # Generate image from noise. Extend to 3 channels for matplot figure.
+    #         img = np.reshape(np.repeat(g[j][:, :, np.newaxis], 3, axis=2),
+    #                          newshape=(28, 28, 3))
+    #         a[j][i].imshow(img)
 
-    f.show()
-    plt.draw()
-    plt.waitforbuttonpress()
+    # f.show()
+    # plt.draw()
+    # plt.waitforbuttonpress()
+
+end = time.time()
+print(end - start)

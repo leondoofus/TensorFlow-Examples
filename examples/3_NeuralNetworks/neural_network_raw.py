@@ -18,6 +18,8 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
 
 import tensorflow as tf
+import time
+start = time.time()
 
 # Parameters
 learning_rate = 0.1
@@ -99,3 +101,6 @@ with tf.Session() as sess:
     print("Testing Accuracy:", \
         sess.run(accuracy, feed_dict={X: mnist.test.images,
                                       Y: mnist.test.labels}))
+
+end = time.time()
+print(end - start)
