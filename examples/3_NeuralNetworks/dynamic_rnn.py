@@ -166,7 +166,8 @@ accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 init = tf.global_variables_initializer()
 
 # Start training
-with tf.Session() as sess:
+with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+#with tf.Session() as sess:
 
     # Run the initializer
     sess.run(init)
