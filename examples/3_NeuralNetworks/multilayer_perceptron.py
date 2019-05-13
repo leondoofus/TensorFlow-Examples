@@ -78,7 +78,8 @@ train_op = optimizer.minimize(loss_op)
 # Initializing the variables
 init = tf.global_variables_initializer()
 
-with tf.Session() as sess:
+with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+#with tf.Session() as sess:
     sess.run(init)
 
     # Training cycle
