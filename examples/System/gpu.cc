@@ -7,7 +7,7 @@ int status;
 char path[PATH_MAX];
 
 
-fp = popen("nvidia-smi", "r");
+fp = popen("nvidia-smi | grep '[0-9][0-9]C' | awk '{print $3}' | sed 's/C//'", "r");
 if (fp == NULL)
     return 1;
 
