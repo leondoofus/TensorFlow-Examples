@@ -7,7 +7,7 @@ int status;
 char path[PATH_MAX];
 
 
-fp = popen("nvidia-smi *", "r");
+fp = popen("nvidia-smi", "r");
 if (fp == NULL)
     return 1;
 
