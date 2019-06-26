@@ -17,7 +17,7 @@ Project: https://github.com/aymericdamien/TensorFlow-Examples/
 
 from __future__ import division, print_function, absolute_import
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 import time
