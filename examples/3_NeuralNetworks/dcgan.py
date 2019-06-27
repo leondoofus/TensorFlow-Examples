@@ -149,8 +149,8 @@ with tf.Session() as sess:
                      disc_target: batch_disc_y, gen_target: batch_gen_y}
         _, _, gl, dl = sess.run([train_gen, train_disc, gen_loss, disc_loss],
                                 feed_dict=feed_dict)
-        if i % 100 == 0 or i == 1:
-            print('Step %i: Generator Loss: %f, Discriminator Loss: %f' % (i, gl, dl))
+        '''if i % 100 == 0 or i == 1:
+            print('Step %i: Generator Loss: %f, Discriminator Loss: %f' % (i, gl, dl))'''
 
     # Generate images from noise, using the generator network.
     # f, a = plt.subplots(4, 10, figsize=(10, 4))

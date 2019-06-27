@@ -181,9 +181,9 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
             # Calculate batch accuracy & loss
             acc, loss = sess.run([accuracy, cost], feed_dict={x: batch_x, y: batch_y,
                                                 seqlen: batch_seqlen})
-            print("Step " + str(step*batch_size) + ", Minibatch Loss= " + \
+            '''print("Step " + str(step*batch_size) + ", Minibatch Loss= " + \
                   "{:.6f}".format(loss) + ", Training Accuracy= " + \
-                  "{:.5f}".format(acc))
+                  "{:.5f}".format(acc))'''
 
     print("Optimization Finished!")
 
